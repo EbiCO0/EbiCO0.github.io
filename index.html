@@ -2,468 +2,126 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="وب‌سایت رسمی EBICO">
+  <meta name="theme-color" content="#080d19">
   <title>EBICO | وب‌سایت رسمی</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: #080d19;
-      color: #f5f7ff;
-      line-height: 1.8;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    /* HEADER */
-
-    header {
-      background: rgba(13, 21, 39, 0.95);
-      border-bottom: 1px solid #1d2b45;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 27px;
-      font-weight: bold;
-      color: #58a6ff;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      color: #b9c5d9;
-      font-size: 14px;
-      transition: .3s;
-    }
-
-    nav a:hover {
-      color: #58a6ff;
-    }
-
-    .header-btn {
-      background: #2479df;
-      padding: 9px 20px;
-      border-radius: 9px;
-      font-size: 13px;
-      transition: .3s;
-    }
-
-    .header-btn:hover {
-      background: #4595f5;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 570px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      background:
-        radial-gradient(ellipse at 50% 20%,
-        #15396a 0%, #0b172d 45%, #080d19 80%);
-    }
-
-    .hero-content {
-      max-width: 750px;
-      margin: auto;
-      padding: 80px 0;
-    }
-
-    .tag {
-      display: inline-block;
-      color: #72b5ff;
-      border: 1px solid #28538b;
-      background: #112b4c;
-      padding: 6px 17px;
-      border-radius: 30px;
-      font-size: 12px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(34px, 6vw, 60px);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #58a6ff;
-    }
-
-    .hero p {
-      color: #a6b4ca;
-      font-size: 16px;
-      margin-bottom: 35px;
-    }
-
-    .main-btn {
-      display: inline-block;
-      background: #2479df;
-      padding: 13px 30px;
-      border-radius: 10px;
-      font-size: 14px;
-      transition: .3s;
-    }
-
-    .main-btn:hover {
-      transform: translateY(-3px);
-      background: #4595f5;
-    }
-
-    /* GENERAL SECTIONS */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 29px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #8e9db5;
-      font-size: 14px;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #0c1424;
-    }
-
-    .about-box {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      color: #aebbd0;
-      padding: 35px;
-      border: 1px solid #1d2c45;
-      border-radius: 18px;
-      background: #101c30;
-    }
-
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: #101a2b;
-      border: 1px solid #1d2c45;
-      padding: 30px 22px;
-      border-radius: 16px;
-      text-align: center;
-      transition: .3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: #3989e8;
-    }
-
-    .service-icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: #93a2b9;
-      font-size: 13px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #0c1424;
-      text-align: center;
-    }
-
-    .contact p {
-      color: #aebbd0;
-      margin-bottom: 25px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #060a13;
-      border-top: 1px solid #1d2b45;
-      padding: 40px 0 20px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .footer-description {
-      color: #8998af;
-      font-size: 13px;
-      max-width: 350px;
-      margin-top: 10px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 13px;
-      color: #aebbd0;
-    }
-
-    .footer-links a:hover {
-      color: #58a6ff;
-    }
-
-    .copyright {
-      border-top: 1px solid #1b2638;
-      padding-top: 18px;
-      text-align: center;
-      color: #68768b;
-      font-size: 12px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-      .navbar {
-        flex-wrap: wrap;
-        padding: 15px 0;
-      }
-
-      nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      .header-btn {
-        font-size: 11px;
-      }
-
-      .hero {
-        min-height: 480px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-      }
-    }
-  </style>
+  <!-- Bootstrap 5 RTL -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg container py-3">
+      <a class="navbar-brand logo" href="#home">EBICO<span>.</span></a>
+      <button class="navbar-toggler menu-toggle" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="باز کردن منو">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container navbar">
-
-      <a href="#" class="logo">EBICO.</a>
-
-      <nav>
-        <a href="#home">خانه</a>
-        <a href="#about">درباره ما</a>
-        <a href="#services">خدمات</a>
-        <a href="#contact">تماس</a>
-      </nav>
-
-      <a href="#contact" class="header-btn">ارتباط با ما</a>
-
-    </div>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-3 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">خانه</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">درباره ما</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">بخش‌ها</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">تماس</a></li>
+        </ul>
+        <a class="btn btn-primary-custom" href="#contact">ارتباط با ما</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- HERO -->
   <main>
-
-    <section class="hero" id="home">
+    <section class="hero-section" id="home">
       <div class="container hero-content">
+        <span class="eyebrow">WELCOME TO EBICO</span>
+        <h1>به دنیای <span>EBICO</span> خوش آمدید</h1>
+        <p>یک فضای دیجیتال برای ایده‌ها، پروژه‌ها و تجربه‌های تازه.</p>
+        <a class="btn btn-primary-custom btn-lg" href="#about">بیشتر بدانید</a>
+      </div>
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+    </section>
 
-        <span class="tag">WELCOME TO EBICO</span>
-
-        <h1>
-          به دنیای <span>EBICO</span> خوش آمدید
-        </h1>
-
-        <p>
-          اینجا شروع یک تجربه جدید و متفاوت است.
-          به‌زودی مطالب و امکانات بیشتری در این وب‌سایت قرار می‌گیرند.
-        </p>
-
-        <a href="#about" class="main-btn">
-          بیشتر بدانید
-        </a>
-
+    <section class="section-padding" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">ABOUT</span>
+          <h2>درباره EBICO</h2>
+          <p>این متن نمونه است؛ بعداً می‌توانی معرفی و هدف واقعی وب‌سایت را جایگزین کنی.</p>
+        </div>
+        <div class="about-panel">
+          <p class="mb-0">به وب‌سایت EBICO خوش آمدید. این بخش برای معرفی وب‌سایت، اهداف و فعالیت‌های شما در نظر گرفته شده است. ساختار صفحه طوری آماده شده که بتوانی در آینده به‌راحتی آن را گسترش بدهی.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+    <section class="section-padding section-muted" id="services">
       <div class="container">
-
-        <div class="section-title">
-          <h2>درباره ما</h2>
-          <p>کمی بیشتر با EBICO آشنا شوید</p>
-        </div>
-
-        <div class="about-box">
-          <p>
-            به وب‌سایت EBICO خوش آمدید.
-            این بخش برای معرفی وب‌سایت، اهداف و فعالیت‌های
-            شما در آینده در نظر گرفته شده است.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="container">
-
-        <div class="section-title">
+        <div class="section-heading">
+          <span class="section-kicker">EXPLORE</span>
           <h2>بخش‌های وب‌سایت</h2>
-          <p>این قسمت در آینده قابل توسعه است</p>
+          <p>کارت‌های نمونه برای بخش‌هایی که بعداً اضافه می‌کنی.</p>
         </div>
-
-        <div class="services-grid">
-
-          <div class="service-card">
-            <div class="service-icon">🌐</div>
-            <h3>بخش اول</h3>
-            <p>توضیحات این بخش را بعداً اضافه کنید.</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="feature-card h-100">
+              <div class="feature-icon">✦</div>
+              <h3>بخش اول</h3>
+              <p>توضیح کوتاهی درباره این بخش بنویس.</p>
+            </article>
           </div>
-
-          <div class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3>بخش دوم</h3>
-            <p>توضیحات این بخش را بعداً اضافه کنید.</p>
+          <div class="col-md-4">
+            <article class="feature-card h-100">
+              <div class="feature-icon">⌘</div>
+              <h3>بخش دوم</h3>
+              <p>توضیح کوتاهی درباره این بخش بنویس.</p>
+            </article>
           </div>
-
-          <div class="service-card">
-            <div class="service-icon">🚀</div>
-            <h3>بخش سوم</h3>
-            <p>توضیحات این بخش را بعداً اضافه کنید.</p>
+          <div class="col-md-4">
+            <article class="feature-card h-100">
+              <div class="feature-icon">↗</div>
+              <h3>بخش سوم</h3>
+              <p>توضیح کوتاهی درباره این بخش بنویس.</p>
+            </article>
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
+    <section class="section-padding" id="contact">
       <div class="container">
-
-        <div class="section-title">
-          <h2>در ارتباط باشید</h2>
-          <p>راه‌های ارتباطی خود را در آینده اینجا قرار دهید.</p>
+        <div class="contact-panel text-center">
+          <span class="section-kicker">GET IN TOUCH</span>
+          <h2>در ارتباط باشیم</h2>
+          <p>در آینده لینک شبکه‌های اجتماعی یا راه ارتباطی‌ات را اینجا قرار بده.</p>
+          <a class="btn btn-primary-custom" href="#home">بازگشت به بالا</a>
         </div>
-
-        <p>منتظر اتفاقات جدید در EBICO باشید!</p>
-
-        <a href="#home" class="main-btn">
-          بازگشت به بالا
-        </a>
-
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-
-      <div class="footer-content">
-
-        <div>
-          <a href="#" class="logo">EBICO.</a>
-          <p class="footer-description">
-            وب‌سایت رسمی EBICO؛
-            شروعی برای ساختن چیزهای بزرگ‌تر.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <a href="#home">خانه</a>
-          <a href="#about">درباره ما</a>
-          <a href="#services">خدمات</a>
-          <a href="#contact">تماس</a>
-        </div>
-
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="logo" href="#home">EBICO<span>.</span></a>
+        <p class="footer-description">شروعی برای ساختن چیزهای بزرگ‌تر.</p>
       </div>
-
-      <div class="copyright">
-        © 2026 EBICO. All Rights Reserved.
+      <div class="footer-links">
+        <a href="#home">خانه</a>
+        <a href="#about">درباره ما</a>
+        <a href="#services">بخش‌ها</a>
+        <a href="#contact">تماس</a>
       </div>
-
     </div>
+    <div class="container copyright">© <span id="currentYear">2026</span> EBICO. تمام حقوق محفوظ است.</div>
   </footer>
 
+  <!-- Bootstrap JavaScript bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom scripts -->
+  <script src="js/script.js"></script>
 </body>
 </html>
